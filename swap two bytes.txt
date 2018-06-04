@@ -1,6 +1,8 @@
 ************************************Question:- *****************************
 
-Swap all the pair of bits in a byte. Before swapping: 11-10-11-01 After swapping: 11-01-11-10
+Swap all the pair of bits in a byte. 
+Before swapping: 11-10-11-01 
+After swapping: 11-01-11-10
 
 Examples:
 
