@@ -1,0 +1,27 @@
+***************************question*******************************
+Count number of bits set in binary equivalent of any given number 
+
+****************************code**********************************
+****************************c++***********************************
+
+// cpp leaning.cpp : Defines the entry point for the console application.
+// std:[c++17];
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,temp=0,count=0;
+	cin >> x;
+	while (x > 0)
+	{
+		temp = x % 2;
+		x = x / 2;
+		if (temp == 1)
+			count++;
+	}
+	cout << "Number of bits set in binary equivalent of given integer is " << count << endl;
+	return 0;
+}
+
+********************************************************************
