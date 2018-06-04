@@ -1,0 +1,43 @@
+************************************Question:- *****************************
+
+Swap all the pair of bits in a byte. Before swapping: 11-10-11-01 After swapping: 11-01-11-10
+
+Examples:
+
+Input  : 00000010
+Output : 00000001
+
+Input  : 00000100
+Output : 00001000
+
+***************************************code*********************************
+**************************************c++ **********************************
+ #include "stdafx.h"
+ #include<iostream>
+ #include<cstdlib>
+ using namespace std;
+ int main()
+ {
+	int x[8] = { 0 }, num,rem,temp,i=7;
+	cout << "Enter input values within 0-255 range ";
+	cin >> num;
+	while (num > 0)
+	{
+		rem = num % 2;
+		num = num / 2;			//Deciaml to binary conversion
+		x[i] = rem;
+		i--;
+	}
+	for (int j = 0; j < 8; j += 2)
+	{
+		temp = x[j];
+		x[j] = x[j + 1];		//Swapping of bits
+		x[j + 1] = temp;
+	}
+	for (int j = 0; j < 8; j++)
+	{
+		cout << x[j];
+	}
+	cout << endl;
+	return 0;
+ }
