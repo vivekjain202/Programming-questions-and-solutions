@@ -1,0 +1,42 @@
+****************************Question*******************************
+
+You are given a list of n-1 integers and these integers are in the range of 1 to n. There are no duplicates in list. One of the integers is missing in the list. Write an efficient code to find the missing integer.
+
+Example :
+I/P    [1,2,3,5,6,7,8,9,10]
+O/P    4
+
+*****************************Algo***********************************
+
+1. Get the sum of numbers 
+       total = n*(n+1)/2
+2  Subtract all the numbers from sum and
+   you will get the missing number.
+
+******************************code**********************************
+******************************c++***********************************
+
+
+
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int missing_number(int x[], int array_size)
+{
+	int sum = (array_size + 1)*(array_size + 2) / 2;
+	for (int i = 0; i < array_size; i++)
+	{
+		sum -= x[i];
+	}
+	return sum;
+}
+int main()
+{
+	int x[9] = { 1,2,3,5,6,7,8,9,10};
+	int missing=missing_number(x,sizeof(x) / sizeof(int));
+	cout <<"Missing number is "<< missing <<endl;
+	return 0;
+}
+
+
+***********************************************************************
