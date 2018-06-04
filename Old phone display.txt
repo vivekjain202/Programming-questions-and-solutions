@@ -1,0 +1,130 @@
+***********************************************Kata from codewars**************************************************
+
+In this Kata, you need to simulate an old mobile display, similar to this one:
+
+***************************
+*                         *
+*                         *
+*        VivekJain        *
+*                         *
+*                         *
+* Menu           Contacts *
+***************************
+
+Input Parameters:
+
+    number of characters for width (n)
+    height-to-width ratio in percentage (p)
+
+Example: if n=30 and p=40, then display will be 30 characters large and its height will be 40% of n.
+
+Rules and Notes:
+
+    the border, as you can see, is filled with *;
+    the rounding of divisions and float numbers is always by the integer (1.2, 1.5, 1.9 they are always reduced to 1), keep this in mind when you calculate proportions; for Python: always multiply first, then divide.
+    the menus Menu and Contacts are always in the second last line, at 1 character distance respectively from the left and from the right border;
+    the CodeWars logo is always in the middle horizontally and in the half-1 line vertically;
+    the width n must be always at least 20 characters and the percentage p must be always at least 30%, take care of this (otherwise menus won't likely fit).
+    random tests might get big and percentages might be higher than 100;
+
+OFF-TOPIC before Examples:
+
+A bit of advertisement for an old unnoticed Kata that I translated from Python to Javascript: Character Counter and Bars Graph
+
+Examples:
+
+    mobileDisplay(30,40):
+
+******************************
+*                            *
+*                            *
+*                            *
+*                            *
+*          VivekJain         *
+*                            *
+*                            *
+*                            *
+*                            *
+* Menu              Contacts *
+******************************
+
+    mobileDisplay(25,50):
+
+*************************
+*                       *
+*                       *
+*                       *
+*                       *
+*       VivekJain       *
+*                       *
+*                       *
+*                       *
+*                       *
+* Menu         Contacts *
+*************************
+
+**************************************************************code************************************************************
+**************************************************************c++*************************************************************
+
+
+
+// cpp leaning.cpp : Defines the entry point for the console application.
+// std:[c++17];
+//Author : Vivek Jain
+//Mail id:- v.jain.202@gmail.com
+#include "stdafx.h"
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int width, percentage, height,temp;
+	cout << "Enter width and aspect ratio";
+	cin >> width >> percentage;
+	height = floor((percentage *width/ 100));
+	cout << endl << endl;
+	for (int i = 0; i < width; i++)
+		cout << '*';
+	cout << endl;
+	temp = height-1;
+	while (temp > 0)
+	{
+		cout << '*';
+		if (temp != (height / 2))			// Since pattern is same except middle line and second last line so this is used to middle line
+		{
+			for (int i = 0; i < width - 2; i++)
+			{
+				cout << ' ';
+			}
+			cout << "*\n";
+		}
+		else
+		{
+			if (temp == (height / 2))				//For printing out my name in middle of the screen
+			{
+				for (int i = 2; i < ((width / 2) - 3); i++)
+				{
+					cout << ' ';
+				}
+				cout << "VivekJain";
+				for (int i = ((width / 2) + 4); i < width - 2; i++)
+				{
+					cout << ' ';
+				}
+				cout << "*\n";
+			}
+		}
+		temp--;
+	}
+	cout << "* Menu";							//this section is for printing menu and contact at second last line
+	for (int i = 0; i < width - 16; i++)
+		cout << ' ';
+	cout << "Contacts *\n";
+	for (int i = 0; i < width; i++)
+		cout << '*';
+	cout << endl<< endl<< endl;
+		getchar(); 							//freeze screen until keypress
+		return 0;
+}
+
+********************************************************************************************************************************************************
