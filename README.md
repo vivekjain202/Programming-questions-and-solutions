@@ -9,3 +9,4 @@ Feel free to use this list for your learning purpose.</b></br></br>
 2.<a href= https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Find%20missing%20numbers%20in%20array.txt> Find the missing number in array</a></br>
 3. <a href= https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Number%20of%20set%20bits%20in%20a%20number.txt> Number of bits set in binary equivalent of any integer number </a></br>
 4. <a href=https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Old%20phone%20display.txt> Old phone display </a></br>
+5.<a href=https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/is%20sorted.txt> Checking array is sorted or not using recursion </a></br>
