@@ -1,6 +1,6 @@
 # Programming-questions-and-solutions</br>
 Collection of programming question and their solutions.</br></br>
-<b>I am making collection of question and their solution which i come across during my learning process.
+<b>I am making collection of question and their solution which i am solving during my learning process.
 Feel free to use this list for your learning purpose.</b></br></br>
 
 <b>LIST :-</b></br>
