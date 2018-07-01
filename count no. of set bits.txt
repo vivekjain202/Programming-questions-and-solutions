@@ -1,0 +1,32 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+/* long int bitcount(long int k)
+{
+    int cnt=0;
+    while(k)
+    {
+        cnt++;
+        k&=k-1;
+    }
+    return cnt;
+}   */
+long int bitcount(long int k)
+{
+    long int rem=0,cnt=0;
+    while(k)
+    {
+        rem=k%2;
+        k=k/2;
+        if(rem==1)cnt++;
+    }
+    return cnt;
+}
+
+int main()
+{
+    int k=15;
+    cout<<bitcount(1234689512364);
+    return 0;
+}
