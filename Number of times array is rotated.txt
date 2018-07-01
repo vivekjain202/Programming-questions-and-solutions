@@ -1,0 +1,43 @@
+********************problem******************
+a given sorted array is rotated clockwise certain number of times.
+find number of times array is rotated ?
+
+
+
+********************code*********************
+
+#include<iostream>
+#include<vector>
+#include<iterator>
+#include<algorithm>
+using namespace std;
+
+int binarysearch(vector<int> v)
+{
+    int start=0,last=static_cast<int>(v.size());
+    int mid=0;
+    int mini=v[9],index=0;
+    while(start<=last)
+    {
+            mid=(start+last)/2;
+           if(v[mid]<=mini)
+           {
+            //   cout<<" "<<mini<<" ";
+               mini=v[mid];
+               index=mid;
+               last=mid-1;
+           }
+           else
+           {
+               start=mid+1;
+           }
+    }
+    return index;
+}
+int main()
+{
+    vector<int> vivek ={11,12,15,18,2,5,6,8};
+  //  sort(vivek.begin(),vivek.end());
+    cout<<binarysearch(vivek);
+    return 0;
+}

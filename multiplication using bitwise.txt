@@ -1,0 +1,47 @@
+*************************problem***************
+
+Use bitwise operator to multiply two number.
+
+
+Algo :-
+
+(Russian farmer multiplication algorithim)
+
+let m and n are two number to be multiplied.
+
+every time divide m/2 (shift right by 1) and multiply n*2(or shift left by1).
+now if the m is even than n is not added into result else it will be added into result.
+perform it untill m is 1 or 0;
+
+ m=35 n=40  
+
+		m	n	
+		35	40
+		17	80
+		8	160
+		4	320
+		2	640
+		1	1280
+			-----
+			40+80+1280 =1400
+
+***********************code**************************
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int m,n,sum=0;
+    cin>>m>>n;
+    while(m)
+    {
+        if(m&1)
+        {
+            sum+=n;
+        }
+        m=m>>1;
+        n=n<<1;
+    }
+    cout<<sum;
+    return 0;
+}

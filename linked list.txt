@@ -1,0 +1,109 @@
+#include<iostream>
+using namespace std;
+
+struct node{
+    int data;
+    node *next;
+};
+class linked_list{
+public:
+    node *head;
+public:
+    linked_list(): head(NULL){}
+    void add (int x,int pos=1)
+    {
+        node *temp= new node;
+        temp->data=x;
+        if(pos==1)
+        {
+            temp->next=head;
+            head=temp;
+            return;
+        }
+        node *temp2=head;
+        for(int i=0;i<pos-2;i++)
+        {
+            temp2=temp2->next;
+        }
+        temp->next=temp2->next;
+        temp2->next=temp;
+    }
+    void print()
+    {
+        node *temp=head;
+        while(temp!=NULL)
+        {
+            cout<<temp->data<<"\t";
+            temp=temp->next;
+        }
+        cout<<endl;
+    }
+    void del(int pos=1)
+    {
+        node *temp=head;
+        if(pos==1)
+        {
+            head=temp->next;
+            delete temp;
+            return;
+        }
+        for(int i=0;i<pos-2;i++)
+        {
+            temp=temp->next;
+            if(temp!=NULL){
+                cout<<"You're trying to go beyond scope of linked list\n";
+                return;
+            }
+        }
+        node* temp2;
+        temp2=temp->next;
+        temp->next=temp2->next;
+    }
+    void middle()
+    {
+        node *temp=head;
+        int count=0;
+        while(temp!=NULL)
+        {
+            temp=temp->next;
+            count++;
+        }
+        temp=head;
+        for(int i=0;i<count/2;i++)
+        {
+            temp=temp->next;
+        }
+        cout<<temp->data<<endl;
+    }
+    void rev()
+    {
+        node* temp=head;
+        node *prev=NULL;
+        node *temp2=head;
+        while(temp!=NULL)
+        {
+            temp2=temp->next;
+            temp->next=prev;
+            prev=temp;
+            temp=temp2;
+        }
+        head=prev;
+    return;
+    }
+};
+
+int main()
+{
+   linked_list a;
+   a.add(1);
+   a.add(2);
+   a.add(3);
+   a.add(4);
+   a.add(5);
+   a.add(6);
+   a.print();
+   a.middle();
+    a.rev();
+   a.print();
+    return 0;
+}

@@ -1,0 +1,34 @@
+*********************problem********************
+Find the hamming distance between two numbers ?
+Hamming distance is the distance by which two number differs from each other.
+
+Ex. :-
+	let x =1010    y= 0101
+	
+	here at all position bits of x and y are distinct so the hamming distance is 4;
+
+*********************code**************************
+
+#include<iostream>
+using namespace std;
+
+int hamming(int x)
+{
+    int cnt=0;
+    while(x)
+    {
+        cnt++;
+        x &=x-1;
+    }
+    return cnt;
+}
+
+int main()
+
+{
+    int x,y;
+    cin>>x>>y;
+    x=x^y;
+    cout<<hamming(x);
+    return 0;
+}
