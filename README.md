@@ -10,3 +10,4 @@ Feel free to use this list for your learning purpose.</b></br></br>
 3. <a href= https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Number%20of%20set%20bits%20in%20a%20number.txt> Number of bits set in binary equivalent of any integer number </a></br>
 4. <a href=https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Old%20phone%20display.txt> Old phone display </a></br>
 5.<a href=https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/is%20sorted.txt> Checking array is sorted or not using recursion </a></br>
+6. <a href='https://github.com/vivekjain202/Programming-questions-and-solutions/blob/master/Binary%20search%20for%20n%20depth%20sorted%20matrix"> Binary search for n level deep array </a></br>
