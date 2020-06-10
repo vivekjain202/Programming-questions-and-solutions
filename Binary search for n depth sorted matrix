@@ -1,0 +1,72 @@
+// need to adjust default behaviour of binary search to return these values
+// equal = we find the exact value
+// less = if the first value of array is greater than value
+// greater = if the last value of array is less than value
+// not found = if value is between first and last element and not present
+// we need this change to make binary search to work for any depth
+function binarySearchAdjusted(a, value){
+  let start = 0;
+  let end = a.length-1;
+  while(start <= end){
+    let mid = start + Math.floor((end - start)/2)
+    if(a[mid] === value){
+      return "equal"
+    } else if( a[mid] > value){
+      end = mid - 1
+    } else {
+      start = mid + 1
+    }
+  }
+  return a[0] > value ? "less" : (a[a.length-1] < value ? "greater" : "not found")
+}
+
+function binarySearch(a, value){
+  let start = 0; 
+  let end = a.length-1;
+  let state;
+  while(start <= end){
+    let mid = start + Math.floor((end-start)/2)
+    // make a recursive call untill 2d array depth
+    if(Array.isArray(a[mid][0])){
+      state = binarySearch(a[mid], value)
+      // we get true false only when value is found or not found so we can return in these case as we no longer need to check 
+      // further
+      if(state === true || state === false){
+        return state;
+      }
+    }else {
+      state = binarySearchAdjusted(a[mid], value); 
+    }
+    if(state === 'equal' || state === 'not found'){
+       return state
+    } else if(state === 'less'){
+      end = mid - 1
+    } else {
+      start = mid + 1
+    }
+  }
+  return state
+}
+
+// we just need this for final comparision
+function final(a,value){
+  return binarySearch(a,value) === 'equal'
+}
+
+console.log(final(
+  [
+    [
+      [1,3,6,8],
+      [10,15,18,19]
+    ],
+    [
+      [21,29,30,33]
+    ],
+    [
+      [
+        [330]
+      ]
+    ]
+  ],
+  303
+))
